@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resize App</title>
+<style>
+  :root { --hero:#2F6FD6; --deep:#1D4FA8; --mid:#3C87F7; --glow:#A8CBFF;
+          --start:#0E7490; --support:#1E5AB8; --support-glow:#7FB2FF; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         background:#fff; color:#fff; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; display: grid; gap: 12px; }
+  .card { border-radius: 24px; padding: 24px; position: relative; overflow: hidden; }
+  .hero { background: var(--hero); }
+  .hero::before { content:""; position:absolute; width:260px; height:260px; border-radius:50%;
+                  background: var(--deep); right:-70px; top:-90px; opacity:.7; }
+  .hero::after { content:""; position:absolute; width:180px; height:180px; border-radius:50%;
+                 background: var(--glow); right:-50px; bottom:-80px; opacity:.35; }
+  .hero > * { position: relative; z-index: 1; }
+  .head { display:flex; align-items:center; gap:16px; }
+  .icon { width:84px; height:84px; border-radius:20px; background:linear-gradient(135deg,var(--mid),#7b5cff);
+          flex:none; }
+  h1 { margin:0; font-size: clamp(26px, 5vw, 40px); line-height:1.15; font-weight:600; }
+  .sub { margin:16px 0; font-size:15px; font-weight:500; }
+  .badges { display:flex; flex-wrap:wrap; gap:8px; }
+  .badge { background: rgba(255,255,255,.18); border-radius: 999px; padding: 6px 12px;
+           font-size:14px; font-weight:700; }
+  .start { background: var(--start); text-align:center; font-weight:700; padding:20px; }
+  .plus { display:inline-grid; place-items:center; width:36px; height:36px; margin:0 6px;
+          border:2px solid rgba(255,255,255,.8); border-radius:50%; vertical-align:middle; font-size:22px; }
+  .tiles { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .tile h2 { margin:0 0 8px; font-size:18px; }
+  .tile p { margin:0; font-size:15px; line-height:1.45; opacity:.95; }
+  .support { background: var(--support); }
+  .support h2 { margin:0 0 8px; }
+  .support p { margin:0 0 16px; line-height:1.45; }
+  .support a { display:inline-block; background:#fff; color: var(--support); font-weight:700;
+               padding:10px 16px; border-radius:999px; text-decoration:none; }
+</style>
+</head>
+<body>
+<main>
+  <section class="card hero">
+    <div class="head">
+      <div class="icon" role="img" aria-label="App icon"></div>
+      <h1>Reorder and shrink your PDFs and audio</h1>
+    </div>
+    <p class="sub">Put pages and clips in order. Make the files smaller. Then share them.</p>
+    <div class="badges">
+      <span class="badge">✓ 100% free</span>
+      <span class="badge">✓ No ads</span>
+      <span class="badge">✓ Files stay on your device</span>
+    </div>
+  </section>
+
+  <section class="card start">Tap <span class="plus">+</span> to add audio, photos or PDFs</section>
+
+  <section class="tiles">
+    <article class="card tile" style="background:#2F6FD6">
+      <h2>Join your audio</h2>
+      <p>Record or import clips. Listen to them, then join them into one small MP3 file.</p>
+    </article>
+    <article class="card tile" style="background:#1D4FA8">
+      <h2>Organize PDFs and photos</h2>
+      <p>Add PDFs or photos. Change the page order and rotation, or move them to another file.</p>
+    </article>
+    <article class="card tile" style="background:#2B6FB5">
+      <h2>Choose the file size</h2>
+      <p>Pick Original, High, Medium or Small. You always see the real size of each file.</p>
+    </article>
+    <article class="card tile" style="background:#4658C9">
+      <h2>Simple gestures</h2>
+      <p>Hold and drag to change the order. Swipe left to delete or rotate. Double-tap or pinch to zoom.</p>
+    </article>
+  </section>
+
+  <section class="card support">
+    <h2>Free, made by one person</h2>
+    <p>No ads. No catch. If this app helps you, please visit the author's page and support their work. This keeps the app free.</p>
+    <a href="#" aria-label="Visit and support the author">Visit &amp; support the author ↗</a>
+  </section>
+</main>
+</body>
+</html>
